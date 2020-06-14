@@ -1,0 +1,12 @@
+name: School Maagement System
+description: 'This module provide various way to interact with teacher and student each other.'
+type: module
+
+package: custom
+# core: '8.x'
+configure: school.configuration
+
+version: '8.x-1.2'
+core: '8.x'
+project: 'School Project'
+

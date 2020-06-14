@@ -1,0 +1,14 @@
+school.student_form:
+  path: /web/add-student-info
+  defaults:
+    _form: 'Drupal\school\Form\StudentForm'
+    _title: 'Add Student Information'
+  requirements:
+    _permission: 'access content'
+school.update_student:
+  path: /web/update-student-info
+  defaults:
+    _form: 'Drupal\school\Form\UpdateStudentForm'
+    _title: 'Update Student Info'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,50 @@
+<?php 
+function school_schema() {
+    $schema['students'] = array(
+        'description' => 'The table for storing student data.',
+        'fields' => array(
+            'id' => array(
+                'description' => t('The primary identifier for student.'),
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'name' => array(
+                'description' => t('student name.'),
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'rollno' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'size' => 'medium',
+                'not null' => TRUE, 
+                'description' => t('student roll number.'),
+            ),
+            'role_id' => array(
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'size' => 'small',
+                'not null' => FALSE, 
+                'description' => t('student roler.'),
+            ),
+            'created_date' => array(
+                'description' => 'created date time(yyyy-mm-dd H:i:s).',
+                'type' => 'varchar',
+                'mysql_type' => 'DATETIME',
+                'not null' => TRUE,
+            ),
+            'status' => array(
+                'description' => 'product status(1=Unblock,0=Block).',
+                'type' => 'int',
+                'length' => 1,
+                'not null' => TRUE,
+                'default' => 1,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

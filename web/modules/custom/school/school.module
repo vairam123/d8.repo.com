@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains school.module.
+ */
+use Symfony\Component\HttpFoundation\RedirectResponse;
+//use Drupal\school\Event\UserLoginEvent;
+
+/**
+ * Implements hook_user_login().
+ */
+//function school_user_login($account) {
+	// Instantiate our event.
+	//$event = new UserLoginEvent($account);
+
+	// Get the event_dispatcher service and dispatch the event.
+	// $event_dispatcher = \Drupal::service('event_dispatcher');
+	// $event_dispatcher->dispatch(UserLoginEvent::EVENT_NAME, $event);
+//}
+
+function school_user_login($account) {
+  // We want to redirect user on login.
+  $response = new RedirectResponse("/web/update-student-info");
+  $response->send();
+  return;
+}

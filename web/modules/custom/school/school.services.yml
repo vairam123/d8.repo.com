@@ -1,0 +1,9 @@
+services:
+  school.event_subscriber:
+    class: Drupal\school\EventSubscriber\UserRedirectSubscriber
+    arguments: ['@path.matcher', '@current_user']
+    tags:
+      - {name: event_subscriber}
+  user.custom.service:
+    class: Drupal\school\Services\UserService
+    arguments: ['@database']
